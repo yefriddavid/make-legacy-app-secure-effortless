@@ -3,10 +3,9 @@ var auth = require('basic-auth')
 
 const app = express()
 
-app.get('/', (req, res, next) => {
+app.all('/', (req, res, next) => {
   var credentials = auth(req)
 
-  console.log("ssss")
   if (!credentials || credentials.name !== 'john' || credentials.pass !== 'secret') {
     res.statusCode = 401
     res.setHeader('WWW-Authenticate', 'Basic realm="example"')
