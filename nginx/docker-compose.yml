@@ -2,8 +2,9 @@ version: '2'
 services:
   router:
     container_name: router
-    image: nginx
+    image: nginx:1.15.2
+    working_dir: /usr/share/nginx/html
     volumes:
       - ./default.conf:/etc/nginx/conf.d/default.conf
-      - ./webapp:/usr/share/nginx/html
+      - ../legacy-uglyapp:/usr/share/nginx/html
     network_mode: "host"
