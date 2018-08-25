@@ -9,9 +9,9 @@ cd nginx
 docker-compose up -d
 
 ```
-
+```
 user and password
 john
 secret
-
+```
 
